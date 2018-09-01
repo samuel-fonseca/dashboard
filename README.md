@@ -32,6 +32,9 @@ git clone https://github.com/brazucaz/dashboard
 # navigate to ./dashboard and install dependencies
 cd dashboard
 composer install
+
+# update .env file to add custom settings
+mv .example.env .env
 ```
 
 Composer will install the dependencies and map out the classes. Once this is done go to [http://localhost/](http://localhost/). XAMPP will forward you to http://localhost/dashboard.
