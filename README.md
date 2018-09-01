@@ -50,6 +50,6 @@ Composer will install the dependencies and map out the classes. Once this is don
 Detects HTTPS protocol
 ![alt text][https]
 
-[ini_get_all]: https://github.com/brazucaz/dashboard/raw/master/screenshots/current/Screenshot_ini_get_all.png
-[phpinfo]: https://github.com/brazucaz/dashboard/raw/master/screenshots/current/Screenshot_phpinfo.png
-[https]: https://github.com/brazucaz/dashboard/raw/master/screenshots/current/Screenshot_https.png
+[ini_get_all]: https://github.com/samuel-fonseca/dashboard/raw/master/screenshots/current/Screenshot_ini_get_all.png
+[phpinfo]: https://github.com/samuel-fonseca/dashboard/raw/master/screenshots/current/Screenshot_phpinfo.png
+[https]: https://github.com/samuel-fonseca/dashboard/raw/master/screenshots/current/Screenshot_https.png
