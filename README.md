@@ -27,7 +27,7 @@ Go to your `htdocs` folder, and:
 mv ./dashboard ./dashboard_old
 
 # clone the project in your `htdocs` dir
-git clone https://github.com/brazucaz/dashboard
+git clone https://github.com/samuel-fonseca/dashboard
 
 # navigate to ./dashboard and install dependencies
 cd dashboard
