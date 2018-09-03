@@ -84,7 +84,7 @@
 
 
     <div class="col-sm-12 mt-2" id="credit">
-      <small class="text-secondary">Developed by <a href="https://github.com/samuel-fonseca">brazucaz</a></small>
+      <small class="text-secondary">Developed by <a href="https://github.com/samuel-fonseca">Samuel Fonseca</a></small>
     </div>
   </div>
 </div>

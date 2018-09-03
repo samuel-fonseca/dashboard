@@ -69,7 +69,7 @@ class Info
 
     foreach( $folders as $k => $v )
     {
-      if( $v == 'brazucaz' )
+      if( $v == 'Dashboard' )
       {
         $key = $k;
       }

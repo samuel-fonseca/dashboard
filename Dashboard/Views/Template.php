@@ -17,13 +17,6 @@
 
 namespace Dashboard\Views;
 
-/**
- * Templating class not complex at all
- * All I do is point to the realpath of
- * the templating files.
- * 
- * @author brazucaz <samuel.fonseca96@gmail.com>
- */
 class Template
 {
 
