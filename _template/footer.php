@@ -4,5 +4,9 @@
 <script src="./assets/js/fontawesome.min.js"></script>
 <script src="./assets/js/view.js"></script>
 
+<?php foreach( $_page['scripts'] as $script ): ?>
+<script src="<?=$_info::url('/dashboard/assets/js/' . $script)?>"></script>
+<?php endforeach; ?>
+
 </body>
 </html>

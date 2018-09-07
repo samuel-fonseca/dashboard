@@ -331,5 +331,32 @@ class Info
 
     }
   }
+
+  /**
+   * Check if debuggin is enabled (creates cookie if doesn't find one)
+   * 
+   * @param bool $set_debug
+   * @return bool
+   */
+  public function debugging()
+  {
+    $debug_cookie = array_key_exists('debug', $_COOKIE) ? $_COOKIE['debug'] : null;
+    if( $debug_cookie )
+      return $debug_cookie;
+    else
+      @setcookie('debug', 0, time() + (10 * 365 * 24 * 60 * 60), '/');
+      return false;
+  }
+
+  public static function set_debugging($set_debug = 0)
+  {
+    $expire = time() + (10 * 365 * 24 * 60 * 60);
+    return setcookie(
+      'debug',
+      $set_debug,
+      $expire,
+      '/'
+    );
+  }
   
 }

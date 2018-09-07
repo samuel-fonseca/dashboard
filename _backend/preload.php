@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require __DIR__ . '/../vendor/autoload.php';
 
 /**
@@ -23,3 +25,18 @@ $_directory = new Dashboard\Directory;
 $_server_os = $_info::system();
 $_guest_os = $_info::guest_system();
 $_browser = $_info::browser();
+
+use Tracy\Debugger;
+
+if( $_info->debugging() == true || $_info->debugging() == 1 )
+{
+
+  /**
+   * Using tracy/tracy for debugging
+   * 
+   * @see https://github.com/nette/tracy
+   */
+  Debugger::enable(Debugger::DETECT, __DIR__ . '/_logs');
+  Debugger::$logSeverity = E_ALL;
+
+}

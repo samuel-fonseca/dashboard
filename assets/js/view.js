@@ -33,7 +33,7 @@ function checkConnection() {
   loading.className = 'fas fa-spinner fa-spin';
   status_div.appendChild(loading);
 
-  fetch(window.location.href, {
+  fetch(window.location.href + '/_load/ping.php?ping=1', {
     method: 'GET'
   })
   .then(response => {
@@ -115,3 +115,63 @@ function serviceIsDown(el) {
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
+/**
+ * Debugging alerts
+ */
+const alert = {
+  parent: document.querySelector('#debug_status_parent'),
+  main: document.querySelector('#debug_status_alert'),
+  message: document.querySelector('#debug_status_message')
+};
+
+// Wait for debugging toggle
+document.getElementById('toggle_debug').addEventListener('change', function(e) {
+  e.preventDefault();
+
+  let debug_request = this.checked ? 1 : 0;
+
+  fetch(window.location.href + '/_load/toggle_debugging.php?debug=' + debug_request, {
+    method: 'GET'
+  })
+  .then(response => response.json())
+  .then(data => {
+    debug_response(data);
+    setTimeout(() => {
+      dismiss_debug_alert();
+    }, 4000);
+  })
+  .catch(err => console.error(err));
+});
+
+// Dismiss the debugging alert
+function dismiss_debug_alert() {
+  var main = document.querySelector('#debug_status_alert');
+  main.classList.remove('slideInUp');
+  main.classList.add('slideOutDown');
+
+  setTimeout(() => {
+    var alert = document.querySelector('#debug_status_parent');
+    alert.classList.add('d-none');
+  }, 200);
+}
+
+// Get the response and render alert
+function debug_response(data) {
+  alert.parent.classList.remove('d-none');
+
+  alert.main.className = 'alert';
+
+  alert.message.innerHTML = data.message;
+  alert.main.classList.add('slideInUp');
+
+  if( data.error ) {
+    alert.main.classList.add('bg-danger');
+    return;
+  }
+  
+  alert.main.classList.add('bg-success');
+  setTimeout(() => {
+    window.location.reload();
+  }, 4500);
+}

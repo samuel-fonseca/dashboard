@@ -45,5 +45,11 @@
         <a class="nav-link" target="_blank" href="https://www.apachefriends.org/index.html">XAMPP home</a>
       </li>
     </ul>
+      <!-- <a class="nav-link" href="#">Debugging</a> -->
+      <span class="pr-2">Debugging</span>
+      <label class="switch" data-toggle="tooltip" data-placement="bottom" title="Toggle Debugging">
+        <input type="checkbox" id="toggle_debug" name="toggle_debug" role="switch" value="1" <?=$_info->debugging() ? 'checked' : ''?> />
+        <span class="slider round"></span>
+      </label>
   </div>
 </nav>

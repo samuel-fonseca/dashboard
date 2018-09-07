@@ -26,12 +26,18 @@ $_page = [
   /**
    * Set custom scripts here in a 1d array
    */
-  'scripts' => [],
+  'scripts' => [
+    'mdc.switch.min.js',
+    'mdc.ripple.min.js'
+  ],
 
   /**
    * Stylesheets in a 1d array
    */
-  'styles' => [],
+  'styles' => [
+    'mdc.switch.min.css',
+    'mdc.ripple.min.css'
+  ],
 ];
 
 include $_template->header();
@@ -100,9 +106,15 @@ $folders = $_directory::target_folder(pathinfo(__DIR__ . '/../'))->read()->sort(
     </div>
 
   </div>
+
+  <div class="row justify-content-center d-none" id="debug_status_parent">
+    <div class="col-sm-12 col-md-auto shadow-lg" id="debug_status_alert">
+      <div id="debug_status_message"></div>
+    </div>
+  </div>
   
 </div>
-
 <?php
 include $_template->modals();
 require $_template->footer();
+?>
