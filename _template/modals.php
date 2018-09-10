@@ -2,17 +2,17 @@
 <div class="modal fade" id="phpModal" tabindex="-1" role="dialog" aria-labelledby="phpModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header text-white border-dark bg-darker">
         <h5 class="modal-title" id="phpModalLabel">phpinfo()</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <iframe src="<?=$_info->url('/dashboard/phpinfo.php', true)?>" width="100%" height="800px" frameBorder="0"></iframe>
+      <div class="modal-body bg-dark">
+        <iframe src="<?=url('/dashboard/phpinfo.php', true)?>" width="100%" height="800px" frameBorder="0"></iframe>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      <div class="modal-footer border-dark bg-darker">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

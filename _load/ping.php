@@ -1,10 +1,12 @@
 <?php
 
+// Response will always be JSON format
 header('Content-Type: application/json');
 
-if( $_REQUEST['ping'] ) {
-  echo json_encode([
-    'error' => false,
-    'message' => 'Page has been loaded.'
-  ]);
-}
+/**
+ * Return simple JSON obj
+ */
+echo json_encode([
+  'error' => false,
+  'message' => 'Page seems to be up.'
+]);

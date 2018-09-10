@@ -63,23 +63,29 @@ class Info
    */
   public static function localpath()
   {
-    return pathinfo(DIRECTORY_SEPARATOR);
     $realpath = realpath(__DIR__);
     $folders = explode(DIRECTORY_SEPARATOR, $realpath);
 
     foreach( $folders as $k => $v )
     {
-      if( $v == 'Dashboard' )
+      if( strpos($v, 'dashboard') !== false )
       {
         $key = $k;
       }
     }
 
+    return self::map_install_folder();
     return $folders[$key - 1];
     
     print_r($folders);
 
     return '1234';
+  }
+
+  public static function map_install_folder()
+  {
+    $parent = __DIR__ . '/..';
+    return scandir($parent);
   }
 
   public static function dir_path($dir)

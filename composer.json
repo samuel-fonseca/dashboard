@@ -9,7 +9,8 @@
     ],
     "require": {
         "vlucas/phpdotenv": "^2.5",
-        "tracy/tracy": "^2.5"
+        "tracy/tracy": "^2.5",
+        "erusev/parsedown": "^1.7"
     },
     "autoload": {
       "psr-4": {

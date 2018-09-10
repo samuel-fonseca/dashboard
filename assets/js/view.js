@@ -29,12 +29,16 @@ setInterval(() => {
 function checkConnection() {
   var status_div = document.querySelector('#connection_status');
 
-  var loading = document.createElement('i');
+  var loading = document.createElement('i'),
+      url = '/dashboard/_load/ping.php';
+
   loading.className = 'fas fa-spinner fa-spin';
   status_div.appendChild(loading);
 
-  fetch(window.location.href + '/_load/ping.php?ping=1', {
-    method: 'GET'
+  fetch(url, {
+    method: 'GET',
+    credentials: 'same-origin',
+    cache: 'default'
   })
   .then(response => {
     clearStatus(status_div);
@@ -46,13 +50,14 @@ function checkConnection() {
       serviceIsDown(status_div);
     }
 
-    status_div.innerHTML = '<small>' + response.statusText + '</small>';
+    status_div.innerHTML = `<small>${response.statusText}</small>`;
   })
   // connection errors
   .catch(err => {
-    console.error(err)
-    status_div.classList.add('badge-danger');
-    status_div.innerHTML = '<small>Unreachable</small>';
+    clearStatus(status_div);
+    serviceIsDown(status_div);
+    status_div.innerHTML = `<small>Unreachable</small>`;
+    console.error(err);
   });
 }
 

@@ -26,17 +26,13 @@ $_page = [
   /**
    * Set custom scripts here in a 1d array
    */
-  'scripts' => [
-    'mdc.switch.min.js',
-    'mdc.ripple.min.js'
-  ],
+  'scripts' => [],
 
   /**
    * Stylesheets in a 1d array
    */
   'styles' => [
-    'mdc.switch.min.css',
-    'mdc.ripple.min.css'
+    'custom.min.css',
   ],
 ];
 

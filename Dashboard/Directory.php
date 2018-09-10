@@ -312,5 +312,21 @@ class Directory
   }
 
 
+  public static function assets($asset = '')
+  {
+    $asset = strpos($asset, '/', 0) !== false ?
+              $asset :
+              '/' . $asset;
+
+    $path = explode('/', self::abspath() . 'assets' . $asset);
+
+    foreach($path as $key => $folder)
+    {
+      if( $folder == 'assets' )
+      {
+        return Info::url($path[$key - 1] . '/' . $path[$key] . $asset, true);
+      }
+    }
+  }
 
 }

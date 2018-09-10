@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2018 Samuel Fonseca
  *
@@ -15,6 +16,39 @@
  * limitations under the License.
  */
 
+?>
+<style>
+
+  body {
+    background-color: #343a40 !important;
+    color: #f2f2f2 !important;
+  }
+
+  .e {
+    background-color: #3d3d3d !important;
+    color: #f2f2f2;
+  }
+
+  .v {
+    background-color: #4d4d4d !important;
+    color: #fff;
+  }
+
+  .v i {
+    color: #ccc !important;
+  }
+
+  table {
+    box-shadow: none !important;
+  }
+
+  tr.h {
+    color: #222 !important;
+  }
+
+</style>
+
+<?php
 /**
  * Get detailed information about
  * PHP's installation

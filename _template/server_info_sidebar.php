@@ -30,7 +30,7 @@
 
       <p>
 
-        <code data-toggle="tooltip" data-placement="bottom" title="Current URL"><small><?=$_info->url()?></small></code>
+        <code data-toggle="tooltip" data-placement="bottom" title="Current URL"><small><?=url()?></small></code>
 
       </p>
       <p>
